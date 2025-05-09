@@ -26,17 +26,10 @@ jobs:
 
     - name: Run unit tests for data_engineering and Model
       run: |
-        python -m unittest discover -s test/data_engineering
-        python -m unittest discover -s test/Model
+        python -m unittest discover -s test/data_engineering -p "test_*.py"
+        python -m unittest discover -s test/Model -p "test_*.py"
 
     - name: Run pylint on src/
       run: |
         export PYTHONPATH=$PYTHONPATH:$(pwd)
         pylint src || true  # Exécution de pylint sur tout le dossier src/
-
-    - name: Upload test results to GitHub Actions (optional)
-      if: success()  # Ajouter une condition si nécessaire
-      uses: actions/upload-artifact@v2  # Changer ici de v3 à v2
-      with:
-        name: test-results
-        path: test-results  # Si vous avez des résultats de tests à uploader
