@@ -1,14 +1,21 @@
+import unittest
 import pandas as pd
 from src.data_engineering.cramer_v import cramers_v
 
-def test_cramers_v():
-    # Données d'exemple
-    data = {'col1': ['A', 'B', 'A', 'B', 'A'], 'col2': ['X', 'X', 'Y', 'Y', 'X']}
-    df = pd.DataFrame(data)
+class TestCramersV(unittest.TestCase):
 
-    # Calcul de Cramér's V
-    result = cramers_v(df['col1'], df['col2'])
+    def test_cramers_v(self):
+        # Données d'exemple
+        data = {'col1': ['A', 'B', 'A', 'B', 'A'], 'col2': ['X', 'X', 'Y', 'Y', 'X']}
+        df = pd.DataFrame(data)
 
-    # Vérifier que le résultat est un nombre
-    assert isinstance(result, float)
-    assert result >= 0 and result <= 1  # Cramér's V doit être entre 0 et 1
+        # Calcul de Cramér's V
+        result = cramers_v(df['col1'], df['col2'])
+
+        # Vérifier que le résultat est un nombre
+        self.assertIsInstance(result, float)
+        self.assertGreaterEqual(result, 0)  # Cramér's V doit être >= 0
+        self.assertLessEqual(result, 1)    # Cramér's V doit être <= 1
+
+if __name__ == '__main__':
+    unittest.main()
