@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="test unitaires">
+    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="test unitaires corrigés avec unittest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data_engineering/cramer_v_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/data_engineering/cramer_v_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data_engineering/feature_selection_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/data_engineering/feature_selection_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746802403824</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test unitaires corrigés avec unittest">
+      <option name="closed" value="true" />
+      <created>1746803276888</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746803276888</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +143,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="factoisation du code" />
     <MESSAGE value="test unitaires" />
-    <option name="LAST_COMMIT_MESSAGE" value="test unitaires" />
+    <MESSAGE value="test unitaires corrigés avec unittest" />
+    <option name="LAST_COMMIT_MESSAGE" value="test unitaires corrigés avec unittest" />
   </component>
 </project>
