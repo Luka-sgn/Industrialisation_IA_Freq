@@ -35,8 +35,8 @@ jobs:
         pylint src || true  # Exécution de pylint sur tout le dossier src/
 
     - name: Upload test results to GitHub Actions (optional)
-      if: success()  # Ajouter une condition si nécessaire
-      uses: actions/upload-artifact@v2  # Changer ici de v3 à v2
+      if: success()  
+      uses: actions/upload-artifact@v1  
       with:
         name: test-results
-        path: test-results  # Si vous avez des résultats de tests à uploader
+        path: test-results 
