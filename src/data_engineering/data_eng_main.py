@@ -8,7 +8,7 @@ from src.data_engineering.utils import print_class_distribution
 
 def main():
     # Chargement des données
-    X_train, y_train, X_test = load_data("/path/to/train_input_cleaned.csv", "/path/to/Ytrain.csv", "/path/to/test_input_cleaned.csv")
+    X_train, y_train, X_test = load_data("/Users/lukasegouin/Documents/CYU/ING3/data_science/processed_data/train_input_cleaned.csv", "/Users/lukasegouin/Documents/CYU/ING3/data_science/Data/Ytrain.csv", "/Users/lukasegouin/Documents/CYU/ING3/data_science/processed_data/test_input_cleaned.csv")
 
     # Prétraitement des données
     y_train = preprocess_y_train(y_train, X_train)
