@@ -1,0 +1,27 @@
+# Ignorer les fichiers Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorer les dossiers et fichiers de dépendances (venv, env, etc.)
+venv/
+.env/
+
+# Ignorer les fichiers de logs
+*.log
+
+# Ignorer les fichiers de données volumineux (ex. CSV, HDF5, etc.)
+*.csv
+*.h5
+*.pkl
+
+# Ignorer les fichiers générés par l'IDE (par exemple PyCharm, VS Code, etc.)
+.idea/
+.vscode/
+
+# Ignorer les fichiers système Mac
+.DS_Store
+
+# Ignorer les fichiers système Windows
+Thumbs.db

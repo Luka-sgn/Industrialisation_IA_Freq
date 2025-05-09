@@ -8,9 +8,9 @@ from src.Model.utils import predict_expected_claims
 def main():
     # Chargement des données
     X_train, X_test, y_train, y_train_full = load_data(
-        "/Users/lukasegouin/Documents/CYU/ING3/data_science/processed_data/Xtrain/X_train_filtered_freq.csv",
-        "/Users/lukasegouin/Documents/CYU/ING3/data_science/processed_data/Xtest/X_test_filtered_freq.csv",
-        "/Users/lukasegouin/Documents/CYU/ING3/data_science/processed_data/Xtest/Y_train_sinistre_2classes.csv"
+        "/Users/lukasegouin/IdeaProjects/Industrialisation_IA_Freq/src/data_engineering/Data/X_train_filtered_freq.csv",
+        "/Users/lukasegouin/IdeaProjects/Industrialisation_IA_Freq/src/data_engineering/Data/X_test_filtered_freq.csv",
+        "/Users/lukasegouin/IdeaProjects/Industrialisation_IA_Freq/src/data_engineering/Classes/Y_train_sinistre_2classes.csv"
     )
 
     # Préparation des données
@@ -27,7 +27,7 @@ def main():
     final_model = train_final_model(X_train, y_train, best_params, X_val, y_val)
 
     # Évaluation du modèle
-    best_threshold, y_pred = evaluate_model(final_model, X_val, y_val, best_threshold)
+    best_threshold, y_pred = evaluate_model(final_model, X_val, y_val)
 
     # Application actuarielle
     mean_1plus = y_train_full.loc[y_train == 1, "NB_SINISTRES"].mean()

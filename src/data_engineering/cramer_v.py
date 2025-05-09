@@ -21,3 +21,13 @@ def calculate_cramers_v_for_categorical_columns(X_train, y_train, categorical_co
         except:
             continue
     return pd.DataFrame(results_cramer_cat, columns=["Variable_Cat", "Cramers_V"]).sort_values(by="Cramers_V", ascending=False)
+
+def calculate_cramers_v_for_ordinales_columns(X_train, y_train, ordinal_columns):
+    results_cramer_cat = []
+    for col in ordinal_columns:
+        try:
+            vcat = cramers_v(X_train[col], y_train["SINISTRE"])
+            results_cramer_cat.append((col, vcat))
+        except:
+            continue
+    return pd.DataFrame(results_cramer_cat, columns=["Variable_Ord", "Cramers_V"]).sort_values(by="Cramers_V", ascending=False)

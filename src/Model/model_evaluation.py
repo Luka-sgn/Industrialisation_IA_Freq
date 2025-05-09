@@ -1,6 +1,7 @@
+import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix, precision_recall_curve
 
-def evaluate_model(final_model, X_val, y_val, best_threshold):
+def evaluate_model(final_model, X_val, y_val):
     y_pred_proba = final_model.predict_proba(X_val)[:, 1]
 
     precisions, recalls, thresholds = precision_recall_curve(y_val, y_pred_proba)

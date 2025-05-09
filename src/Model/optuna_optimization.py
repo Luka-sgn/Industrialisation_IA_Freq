@@ -1,4 +1,5 @@
 import optuna
+import pickle
 from xgboost import XGBClassifier
 from sklearn.metrics import roc_auc_score, average_precision_score
 
@@ -36,4 +37,12 @@ def optimize_model(X_tr, y_tr, X_val, y_val, scale_pos_weight):
     study = optuna.create_study(direction="maximize")
     study.optimize(objective, n_trials=20, timeout=3600)
 
-    return study.best_value, study.best_params
+    # Récupérer les meilleurs paramètres
+    best_params = study.best_params
+    best_value = study.best_value
+
+    # Sauvegarder les meilleurs paramètres dans un fichier pickle (.pkl)
+    with open('params/best_params.pkl', 'wb') as f:
+        pickle.dump(best_params, f)
+
+    return best_value, best_params

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="factoisation du code" />
+    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="test unitaires" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,21 +25,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Luka-sgn"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Luka-sgn&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Luka-sgn/Industrialisation_IA_Freq.git",
-    "accountId": "eaa66925-95f9-4f1a-8a54-277cfcf8e313"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Luka-sgn/Industrialisation_IA_Freq.git&quot;,
+    &quot;accountId&quot;: &quot;eaa66925-95f9-4f1a-8a54-277cfcf8e313&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2wrNXkfkG06UwW7ifuWUjB46nPx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -48,9 +48,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python.data_eng_main.executor": "Run",
+    "Python.model.executor": "Run",
+    "Python.optuna_optimization.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -58,6 +62,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/data_engineering/Data" />
+      <recent name="$PROJECT_DIR$/src/data_engineering/Classes" />
       <recent name="$PROJECT_DIR$/src/data_engineering" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -78,11 +84,39 @@
       <option name="project" value="LOCAL" />
       <updated>1746797111651</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="factoisation du code">
+      <option name="closed" value="true" />
+      <created>1746801496144</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746801496144</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test unitaires">
+      <option name="closed" value="true" />
+      <created>1746801750532</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1746801750532</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="factoisation du code" />
-    <option name="LAST_COMMIT_MESSAGE" value="factoisation du code" />
+    <MESSAGE value="test unitaires" />
+    <option name="LAST_COMMIT_MESSAGE" value="test unitaires" />
   </component>
 </project>
