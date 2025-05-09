@@ -9,9 +9,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 print("Chargement des données...")
-X_train = pd.read_csv("/content/train_input_cleaned.csv")
-y_train = pd.read_csv("/content/Ytrain.csv")
-X_test = pd.read_csv("/content/test_input_cleaned.csv")
+X_train = pd.read_csv("/Users/lukasegouin/Documents/CYU/ING3/data_science/processed_data/train_input_cleaned.csv")
+y_train = pd.read_csv("/Users/lukasegouin/Documents/CYU/ING3/data_science/Data/Ytrain.csv")
+X_test = pd.read_csv("/Users/lukasegouin/Documents/CYU/ING3/data_science/processed_data/test_input_cleaned.csv")
 print("Données chargées avec succès.")
 
 print("Aperçu de X_train :")
