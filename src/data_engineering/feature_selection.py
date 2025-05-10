@@ -12,7 +12,7 @@ def select_features(df_cat, df_ord, df_con, X_train, X_test):
     X_train_filtered = X_train[selected_vars]
     X_test_filtered = X_test[selected_vars]
 
-    X_train_filtered.to_csv("X_train_filtered_freq.csv", index=False)
-    X_test_filtered.to_csv("X_test_filtered_freq.csv", index=False)
+    X_train_filtered.to_csv("Data/X_train_filtered_freq.csv", index=False)
+    X_test_filtered.to_csv("Data/X_test_filtered_freq.csv", index=False)
 
     return X_train_filtered, X_test_filtered

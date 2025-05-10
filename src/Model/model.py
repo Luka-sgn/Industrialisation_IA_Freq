@@ -1,3 +1,4 @@
+import os
 from src.Model.data_loading import load_data
 from src.Model.preprocessing import prepare_data
 from src.Model.optuna_optimization import optimize_model
@@ -38,8 +39,7 @@ def main():
     X_test_filtered = X_test.loc[X_test.index]
     pred_freq_test = predict_expected_claims(final_model, X_test_filtered, best_threshold, mean_1plus)
     results.loc[X_test_filtered.index, "FREQ_prediction"] = pred_freq_test
-
-    results.to_csv("/content/freq.csv", index=False)
+    results.to_csv("content/freq.csv", index=False)
     print("\n✅ Fichier 'freq.csv' sauvegardé avec les prédictions d'espérance de fréquence.")
 
 if __name__ == "__main__":

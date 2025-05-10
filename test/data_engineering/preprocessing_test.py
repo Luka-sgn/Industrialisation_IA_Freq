@@ -6,7 +6,7 @@ from src.data_engineering.preprocessing import preprocess_y_train
 class TestPreprocessYTrain(unittest.TestCase):
 
     def setUp(self):
-        self.test_dir = os.path.join("test", "data_engineering", "Classes_test")
+        self.test_dir = os.path.join("Classes_test")
         os.makedirs(self.test_dir, exist_ok=True)
 
         self.y_train = pd.DataFrame({

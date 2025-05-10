@@ -1,9 +1,10 @@
 import optuna
-import pickle
+import joblib
 from xgboost import XGBClassifier
 from sklearn.metrics import roc_auc_score, average_precision_score
+import os
 
-def optimize_model(X_tr, y_tr, X_val, y_val, scale_pos_weight):
+def optimize_model(X_tr, y_tr, X_val, y_val, scale_pos_weight, encoder=None):
     def objective(trial):
         params = {
             "objective": "binary:logistic",
@@ -14,7 +15,7 @@ def optimize_model(X_tr, y_tr, X_val, y_val, scale_pos_weight):
             "colsample_bytree": trial.suggest_float("colsample", 0.6, 1.0),
             "gamma": trial.suggest_float("gamma", 0, 1),
             "min_child_weight": trial.suggest_int("min_child", 1, 10),
-            "scale_pos_weight": trial.suggest_float("pos_weight", scale_pos_weight*0.5, scale_pos_weight*1.5),
+            "scale_pos_weight": trial.suggest_float("pos_weight", scale_pos_weight * 0.5, scale_pos_weight * 1.5),
             "random_state": 42,
             "eval_metric": ["aucpr", "auc"]
         }
@@ -30,19 +31,29 @@ def optimize_model(X_tr, y_tr, X_val, y_val, scale_pos_weight):
         proba = model.predict_proba(X_val)[:, 1]
 
         auc = roc_auc_score(y_val, proba)
-        ap = average_precision_score(y_val, proba)  # AUC-PR (meilleur pour déséquilibre)
+        ap = average_precision_score(y_val, proba)
 
-        return 0.7 * ap + 0.3 * auc  # Poids plus fort sur AUC-PR
+        return 0.7 * ap + 0.3 * auc
 
     study = optuna.create_study(direction="maximize")
     study.optimize(objective, n_trials=20, timeout=3600)
 
-    # Récupérer les meilleurs paramètres
     best_params = study.best_params
-    best_value = study.best_value
+    best_params.update({
+        "objective": "binary:logistic",
+        "random_state": 42,
+        "eval_metric": ["aucpr", "auc"]
+    })
 
-    # Sauvegarder les meilleurs paramètres dans un fichier pickle (.pkl)
-    with open('params/best_params.pkl', 'wb') as f:
-        pickle.dump(best_params, f)
+    # Entraîner le modèle final avec les meilleurs paramètres
+    final_model = XGBClassifier(**best_params)
+    final_model.fit(
+        X_tr, y_tr,
+        eval_set=[(X_val, y_val)],
+        verbose=False
+    )
 
-    return best_value, best_params
+    # Sauvegarde (model, encoder) comme tuple
+    joblib.dump((final_model, encoder), "params/best_model_encoder_freq_xgb.pkl")
+
+    return study.best_value, best_params
