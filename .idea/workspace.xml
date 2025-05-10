@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="fixing des tests unitaires, normalement ils passent tous, au moins en local" />
+    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="add creatin of Class_test dir for github CI pipeline">
+      <change beforePath="$PROJECT_DIR$/test/data_engineering/preprocessing_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/data_engineering/preprocessing_test.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -246,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746873923903</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add creatin of Class_test dir for github CI pipeline">
+      <option name="closed" value="true" />
+      <created>1746874274334</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1746874274334</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,6 +275,7 @@
     <MESSAGE value="test unitaires" />
     <MESSAGE value="test unitaires corrigés avec unittest" />
     <MESSAGE value="fixing des tests unitaires, normalement ils passent tous, au moins en local" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing des tests unitaires, normalement ils passent tous, au moins en local" />
+    <MESSAGE value="add creatin of Class_test dir for github CI pipeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="add creatin of Class_test dir for github CI pipeline" />
   </component>
 </project>
