@@ -10,8 +10,9 @@ def main():
     # Chargement des données
     X_train, y_train, X_test = load_data("/Users/lukasegouin/Documents/CYU/ING3/data_science/processed_data/train_input_cleaned.csv", "/Users/lukasegouin/Documents/CYU/ING3/data_science/Data/Ytrain.csv", "/Users/lukasegouin/Documents/CYU/ING3/data_science/processed_data/test_input_cleaned.csv")
 
+    path = "/Users/lukasegouin/IdeaProjects/Industrialisation_IA_Freq/src/data_engineering/Classes/Y_train_sinistre_2classes.csv"
     # Prétraitement des données
-    y_train = preprocess_y_train(y_train, X_train)
+    y_train = preprocess_y_train(y_train, X_train,path)
 
     # Affichage de la distribution des classes
     print_class_distribution(y_train)

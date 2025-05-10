@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="test unitaires corrigés avec unittest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_engineering/data_eng_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_engineering/data_eng_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_engineering/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_engineering/preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Model/model_evaluation_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/Model/model_evaluation_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/data_engineering/feature_selection_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/data_engineering/feature_selection_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/data_engineering/preprocessing_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/data_engineering/preprocessing_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +55,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python tests.Python tests for Model_training_test.TestTrainFinalModel.executor": "Run",
+    "Python tests.Python tests for cramer_v_test.TestCramersV.executor": "Run",
+    "Python tests.Python tests for feature_selection_test.TestFeatureSelection.executor": "Run",
+    "Python tests.Python tests for feature_selection_test.TestSelectFeatures.executor": "Run",
+    "Python tests.Python tests for kruskal_test_test.TestKruskalTest.executor": "Run",
+    "Python tests.Python tests for model_evaluation.TestEvaluateModel.executor": "Run",
+    "Python tests.Python tests for model_evaluation_test.TestEvaluateModel.executor": "Run",
+    "Python tests.Python tests for preprocessing_test.TestPreprocessYTrain (1).executor": "Run",
+    "Python tests.Python tests for preprocessing_test.TestPreprocessYTrain.executor": "Run",
+    "Python tests.Python tests for preprocessing_test.TestPreprocessYTrain.test_csv_output.executor": "Run",
+    "Python tests.Python tests for preprocessing_test.TestPreprocessYTrain.test_nb_sinistres_calculation.executor": "Run",
     "Python.data_eng_main.executor": "Run",
     "Python.model.executor": "Run",
     "Python.optuna_optimization.executor": "Run",
@@ -70,6 +85,92 @@
       <recent name="$PROJECT_DIR$/src/data_engineering" />
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for preprocessing_test.TestPrepareData">
+    <configuration name="Python tests for Model_training_test.TestTrainFinalModel" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Industrialisation_IA_Freq" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/Model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Model_training_test.TestTrainFinalModel&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for model_evaluation.TestEvaluateModel" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Industrialisation_IA_Freq" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/Model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;model_evaluation.TestEvaluateModel&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for model_evaluation_test.TestEvaluateModel" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Industrialisation_IA_Freq" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/Model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;model_evaluation_test.TestEvaluateModel&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for preprocessing_test.TestPrepareData" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Industrialisation_IA_Freq" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/Model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;preprocessing_test.TestPrepareData&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for preprocessing_test.TestPreprocessYTrain" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Industrialisation_IA_Freq" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/data_engineering" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;preprocessing_test.TestPreprocessYTrain&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for preprocessing_test.TestPrepareData" />
+        <item itemvalue="Python tests.Python tests for Model_training_test.TestTrainFinalModel" />
+        <item itemvalue="Python tests.Python tests for model_evaluation_test.TestEvaluateModel" />
+        <item itemvalue="Python tests.Python tests for model_evaluation.TestEvaluateModel" />
+        <item itemvalue="Python tests.Python tests for preprocessing_test.TestPreprocessYTrain" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -135,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746804141771</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="test unitaires corrigés avec unittest">
+      <option name="closed" value="true" />
+      <created>1746804363127</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746804363127</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -1,25 +1,39 @@
 import unittest
 import pandas as pd
+import os
 from src.data_engineering.feature_selection import select_features
 
-class TestFeatureSelection(unittest.TestCase):
 
-    def test_select_features(self):
-        # Exemple de données
-        df_cat = pd.DataFrame({'cat1': [1, 2, 3], 'cat2': [4, 5, 6]})
-        df_ord = pd.DataFrame({'ord1': [7, 8, 9], 'ord2': [10, 11, 12]})
-        df_con = pd.DataFrame({'con1': [13, 14, 15], 'con2': [16, 17, 18]})
+# Classe de test
+class TestSelectFeatures(unittest.TestCase):
 
-        # Exemple de données de test
-        X_train = pd.DataFrame({'cat1': [1, 2], 'cat2': [4, 5], 'ord1': [7, 8], 'ord2': [10, 11], 'con1': [13, 14]})
-        X_test = pd.DataFrame({'cat1': [1], 'cat2': [4], 'ord1': [7], 'ord2': [10], 'con1': [13]})
+    def setUp(self):
 
-        # Appel de la fonction
-        selected_features = select_features(df_cat, df_ord, df_con, X_train, X_test)
+        self.df_cat = pd.DataFrame({"Variable_Cat": ["CAT1", "CAT2"]})
+        self.df_ord = pd.DataFrame({"Variable_Ord": ["ORD1"]})
+        self.df_con = pd.DataFrame({"Variable_Con": ["CON1"]})
 
-        # Vérifier que la sélection de features retourne les bonnes variables
-        self.assertGreater(len(selected_features), 0, "La sélection des features n'a pas retourné de caractéristiques.")
-        self.assertTrue(all(col in X_train.columns for col in selected_features), "Certaines caractéristiques sélectionnées ne sont pas présentes dans X_train.")
+        columns = ['ID', 'ANNEE_ASSURANCE', 'CAT1', 'CAT2', 'ORD1', 'CON1', 'OTHER']
+        data = [[1, 5, 'a', 'b', 3, 1.5, 'z'], [2, 3, 'c', 'd', 2, 2.0, 'y']]
+
+        self.X_train = pd.DataFrame(data, columns=columns)
+        self.X_test = pd.DataFrame(data, columns=columns)
+
+    def tearDown(self):
+        for f in ["X_train_filtered_freq.csv", "X_test_filtered_freq.csv"]:
+            if os.path.exists(f):
+                os.remove(f)
+
+    def test_column_selection_and_order(self):
+        X_train_f, X_test_f = select_features(self.df_cat, self.df_ord, self.df_con, self.X_train, self.X_test)
+        expected_cols = ['ID', 'ANNEE_ASSURANCE', 'CAT1', 'CAT2', 'ORD1', 'CON1']
+        self.assertEqual(X_train_f.columns.tolist(), expected_cols)
+        self.assertEqual(X_test_f.columns.tolist(), expected_cols)
+
+    def test_csv_output_exists(self):
+        select_features(self.df_cat, self.df_ord, self.df_con, self.X_train, self.X_test)
+        self.assertTrue(os.path.exists("X_train_filtered_freq.csv"))
+        self.assertTrue(os.path.exists("X_test_filtered_freq.csv"))
 
 if __name__ == '__main__':
     unittest.main()

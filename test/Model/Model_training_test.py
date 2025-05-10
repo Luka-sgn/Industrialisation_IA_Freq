@@ -1,37 +1,42 @@
 import unittest
-import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+import numpy as np
+from xgboost import XGBClassifier
+from sklearn.datasets import make_classification
+
 from src.Model.model_training import train_final_model
 
+
+# Classe de test
 class TestTrainFinalModel(unittest.TestCase):
 
-    def test_train_final_model(self):
-        # Données factices
-        X_train = pd.DataFrame({'feature1': [1, 2, 3], 'feature2': [4, 5, 6]})
-        y_train = pd.Series([0, 1, 0])
-        X_val = pd.DataFrame({'feature1': [1, 2], 'feature2': [4, 5]})
-        y_val = pd.Series([0, 1])
-
-        # Paramètres fictifs
-        best_params = {
-            "n_estimators": 100,
+    def setUp(self):
+        self.X_train, self.y_train = make_classification(
+            n_samples=100, n_features=10, n_informative=5, random_state=42
+        )
+        self.X_val, self.y_val = make_classification(
+            n_samples=20, n_features=10, n_informative=5, random_state=123
+        )
+        self.best_params = {
+            "n_estimators": 10,
             "max_depth": 3,
-            "learning_rate": 0.1,
-            "subsample": 0.8,
-            "colsample_bytree": 0.8,
-            "gamma": 0.1,
-            "min_child_weight": 1,
-            "scale_pos_weight": 1,
-            "random_state": 42,
-            "eval_metric": ["aucpr", "auc"]
+            "learning_rate": 0.1
         }
 
-        # Appel de la fonction d'entraînement
-        model = train_final_model(X_train, y_train, best_params, X_val, y_val)
+    def test_model_training(self):
+        model = train_final_model(
+            self.X_train, self.y_train,
+            best_params=self.best_params.copy(),
+            X_val=self.X_val, y_val=self.y_val
+        )
 
-        # Vérifier que le modèle a bien été entraîné
-        self.assertIsNotNone(model, "Le modèle n'a pas été entraîné correctement.")
-        self.assertTrue(hasattr(model, 'predict'), "Le modèle n'a pas l'attribut 'predict', ce n'est pas un modèle entraîné correctement.")
+        self.assertIsInstance(model, XGBClassifier)
+        self.assertTrue(hasattr(model, "feature_importances_"))
+
+        # Vérifie que les paramètres sont bien pris en compte
+        self.assertEqual(model.get_params()["n_estimators"], 10)
+        self.assertEqual(model.get_params()["max_depth"], 3)
+        self.assertEqual(model.get_params()["learning_rate"], 0.1)
+        self.assertEqual(model.get_params()["objective"], "binary:logistic")
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,26 +1,37 @@
-from src.data_engineering.preprocessing import preprocess_y_train
 import unittest
 import pandas as pd
-from unittest.mock import patch
+import os
+from src.data_engineering.preprocessing import preprocess_y_train
 
 
+# Classe de test
 class TestPreprocessYTrain(unittest.TestCase):
 
-    @patch('pandas.DataFrame.to_csv')  # Mocker la méthode to_csv pour empêcher l'enregistrement du fichier
-    def test_preprocess_y_train(self, mock_to_csv):
-        # Exemple de données
-        X_train = pd.DataFrame({'ANNEE_ASSURANCE': [1, 2, 3]})
-        y_train = pd.DataFrame({'FREQ': [0, 1, 0], 'SINISTRE': [0, 1, 0]})
+    def setUp(self):
+        # Crée les DataFrames d'exemple
+        self.y_train = pd.DataFrame({
+            "FREQ": [0.0, 0.1, 0.5, 1.0]
+        })
+        self.X_train = pd.DataFrame({
+            "ANNEE_ASSURANCE": [1, 5, 2, 1]
+        })
 
-        # Appel de la fonction
-        processed_y_train = preprocess_y_train(y_train, X_train)
+    def test_nb_sinistres_calculation(self):
+        path = "/Users/lukasegouin/IdeaProjects/Industrialisation_IA_Freq/test/data_engineering/Classes_test/Y_train_sinistre_2classes_test.csv"
+        result = preprocess_y_train(self.y_train.copy(), self.X_train,path)
+        expected_nb_sinistres = [0.0, 0.5, 1.0, 1.0]
+        self.assertListEqual(result["NB_SINISTRES"].tolist(), expected_nb_sinistres)
 
-        # Vérifier que la transformation a bien eu lieu
-        self.assertIn('NB_SINISTRES', processed_y_train.columns, "La colonne 'NB_SINISTRES' n'a pas été ajoutée.")
-        self.assertEqual(processed_y_train['SINISTRE'].dtype, 'int64', "Le type de la colonne 'SINISTRE' n'est pas 'int64'.")
+    def test_sinistre_classification(self):
+        path = "/Users/lukasegouin/IdeaProjects/Industrialisation_IA_Freq/test/data_engineering/Classes_test/Y_train_sinistre_2classes_test.csv"
+        result = preprocess_y_train(self.y_train.copy(), self.X_train,path)
+        expected_sinistre = [0, 0, 1, 1]
+        self.assertListEqual(result["SINISTRE"].tolist(), expected_sinistre)
 
-        # Vérifier que la méthode to_csv n'a pas été appelée
-        mock_to_csv.assert_not_called()  # Vérifier que to_csv n'a pas été appelé pendant le test
+    def test_csv_output(self):
+        path = "/Users/lukasegouin/IdeaProjects/Industrialisation_IA_Freq/test/data_engineering/Classes_test/Y_train_sinistre_2classes_test.csv"
+        preprocess_y_train(self.y_train.copy(), self.X_train,path)
+        self.assertTrue(os.path.exists("Classes_test/Y_train_sinistre_2classes_test.csv"))
 
 if __name__ == '__main__':
     unittest.main()
