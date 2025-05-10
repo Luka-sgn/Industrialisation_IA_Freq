@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="test unitaires corrigés avec unittest">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_engineering/data_eng_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_engineering/data_eng_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_engineering/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_engineering/preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Model/model_evaluation_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/Model/model_evaluation_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data_engineering/feature_selection_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/data_engineering/feature_selection_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data_engineering/preprocessing_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/data_engineering/preprocessing_test.py" afterDir="false" />
-    </list>
+    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="fixing des tests unitaires, normalement ils passent tous, au moins en local" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +55,7 @@
     "Python tests.Python tests for kruskal_test_test.TestKruskalTest.executor": "Run",
     "Python tests.Python tests for model_evaluation.TestEvaluateModel.executor": "Run",
     "Python tests.Python tests for model_evaluation_test.TestEvaluateModel.executor": "Run",
+    "Python tests.Python tests for preprocessing_test.TestPrepareData.executor": "Run",
     "Python tests.Python tests for preprocessing_test.TestPreprocessYTrain (1).executor": "Run",
     "Python tests.Python tests for preprocessing_test.TestPreprocessYTrain.executor": "Run",
     "Python tests.Python tests for preprocessing_test.TestPreprocessYTrain.test_csv_output.executor": "Run",
@@ -86,7 +80,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for preprocessing_test.TestPrepareData">
+  <component name="RunManager" selected="Python tests.Python tests for preprocessing_test.TestPreprocessYTrain">
     <configuration name="Python tests for Model_training_test.TestTrainFinalModel" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Industrialisation_IA_Freq" />
       <option name="ENV_FILES" value="" />
@@ -164,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for preprocessing_test.TestPreprocessYTrain" />
         <item itemvalue="Python tests.Python tests for preprocessing_test.TestPrepareData" />
         <item itemvalue="Python tests.Python tests for Model_training_test.TestTrainFinalModel" />
         <item itemvalue="Python tests.Python tests for model_evaluation_test.TestEvaluateModel" />
         <item itemvalue="Python tests.Python tests for model_evaluation.TestEvaluateModel" />
-        <item itemvalue="Python tests.Python tests for preprocessing_test.TestPreprocessYTrain" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746804363127</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixing des tests unitaires, normalement ils passent tous, au moins en local">
+      <option name="closed" value="true" />
+      <created>1746873923903</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746873923903</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -262,6 +264,7 @@
     <MESSAGE value="factoisation du code" />
     <MESSAGE value="test unitaires" />
     <MESSAGE value="test unitaires corrigés avec unittest" />
-    <option name="LAST_COMMIT_MESSAGE" value="test unitaires corrigés avec unittest" />
+    <MESSAGE value="fixing des tests unitaires, normalement ils passent tous, au moins en local" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing des tests unitaires, normalement ils passent tous, au moins en local" />
   </component>
 </project>

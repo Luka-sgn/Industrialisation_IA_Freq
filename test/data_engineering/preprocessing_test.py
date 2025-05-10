@@ -8,6 +8,7 @@ from src.data_engineering.preprocessing import preprocess_y_train
 class TestPreprocessYTrain(unittest.TestCase):
 
     def setUp(self):
+        os.makedirs("Classes_test", exist_ok=True)
         # Crée les DataFrames d'exemple
         self.y_train = pd.DataFrame({
             "FREQ": [0.0, 0.1, 0.5, 1.0]
