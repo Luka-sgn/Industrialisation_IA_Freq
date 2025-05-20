@@ -36,7 +36,7 @@ def optimize_model(X_tr, y_tr, X_val, y_val, scale_pos_weight, encoder=None):
         return 0.7 * ap + 0.3 * auc
 
     study = optuna.create_study(direction="maximize")
-    study.optimize(objective, n_trials=20, timeout=3600)
+    study.optimize(objective, n_trials=5, timeout=3600)
 
     best_params = study.best_params
     best_params.update({
@@ -53,6 +53,7 @@ def optimize_model(X_tr, y_tr, X_val, y_val, scale_pos_weight, encoder=None):
         verbose=False
     )
 
-    joblib.dump((final_model), "params/best_model_freq_xgb.pkl")
+    columns_used = X_tr.columns.tolist()
+    joblib.dump((final_model, columns_used), "params/best_model_freq_xgb.pkl")
 
     return study.best_value, best_params

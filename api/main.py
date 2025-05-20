@@ -1,50 +1,36 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
+from fastapi import FastAPI, UploadFile, File
 import pandas as pd
 import joblib
-from api.freq_predictor import FreqPredictor
-from api.schemas import FreqPredictionInput
+import json
+from typing import List
 
-# Initialisation de l'application FastAPI
 app = FastAPI(
     title="API de Prédiction FREQ",
-    description="API REST pour la prédiction de la fréquence de sinistres basée sur un modèle XGBoost optimisé avec Optuna",
+    description="Upload d'un modèle XGBoost et d'un fichier .json contenant les variables pour prédire la fréquence",
     version="1.0"
 )
 
-# Chargement du modèle et de l’encodeur
+# === Variables globales ===
 model_path = "src/Model/params/best_model_freq_xgb.pkl"
-model_freq = joblib.load(model_path)
+model, columns_used = joblib.load(model_path)
 
-# Initialisation du prédicteur
-predictor = FreqPredictor()
-predictor.model = model_freq
-
-# === Routes ===
-@app.get("/")
-def root():
-    return {"message": "API FREQ en ligne 🚀"}
-
-@app.get("/health")
-def health_check():
-    return {"status": "OK", "message": "API opérationnelle (FREQ)"}
-
-@app.post("/predict_freq")
-def predict_freq(input_data: FreqPredictionInput):
+@app.post("/predict")
+async def predict_from_json(json_file: UploadFile = File(...)):
     """
-    Prédiction de la fréquence de sinistre à partir d’un input validé Pydantic
+    Prédit la fréquence à partir d'un fichier .json contenant les variables (format clé-valeur)
     """
     try:
-        df = pd.DataFrame([input_data.dict()])
-        df = FreqPredictor.reduce_memory_usage(df, verbose=False)
+        if model is None or columns_used is None:
+            return {"error": "Le modèle n'est pas encore chargé. Appelez /load_model d'abord."}
 
-        y_pred = predictor.predict(
-            df,
-            df.select_dtypes(include="number").columns,
-            df.select_dtypes(include="object").columns
-        )
+        contents = await json_file.read()
+        data_dict = json.loads(contents)
+        df = pd.DataFrame([data_dict])
 
-        return {"prediction_freq": float(y_pred[0])}
+        df = df[columns_used]  # filtrage des colonnes attendues
+
+        prediction = model.predict_proba(df)[:,1]
+        return {"prediction_freq": float(prediction[0])}
 
     except Exception as e:
         return {"error": str(e)}
