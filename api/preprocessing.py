@@ -66,15 +66,16 @@ class Preprocessor:
             df_clean = df_clean.applymap(func)
 
         if "ACTIVIT2" in df_clean.columns:
-            df_clean["ACTIVIT2"] = df_clean["ACTIVIT2"].apply(lambda x: self.extract_prefix_code(x, "ACT", 3))
+            df_clean["ACTIVIT2"] = df_clean["ACTIVIT2"].apply(lambda x: float(self.extract_prefix_code(x, "ACT", 3)))
+        print("VOCATION" in df_clean.columns)
         if "VOCATION" in df_clean.columns:
-            df_clean["VOCATION"] = df_clean["VOCATION"].apply(lambda x: self.extract_prefix_code(x, "VOC", 3))
+            df_clean["VOCATION"] = df_clean["VOCATION"].apply(lambda x: float(self.extract_prefix_code(x, "VOC", 3)))
         if "ANCIENNETE" in df_clean.columns:
-            df_clean["ANCIENNETE"] = df_clean["ANCIENNETE"].apply(lambda x: self.extract_prefix_code(x, "CLASS", 4))
+            df_clean["ANCIENNETE"] = df_clean["ANCIENNETE"].apply(lambda x: float(self.extract_prefix_code(x, "CLASS", 4)))
         if "AN_EXERC" in df_clean.columns:
-            df_clean["AN_EXERC"] = df_clean["AN_EXERC"].apply(lambda x: self.extract_prefix_code(x, "ANNEE", 5))
+            df_clean["AN_EXERC"] = df_clean["AN_EXERC"].apply(lambda x: float(self.extract_prefix_code(x, "ANNEE", 5)))
         if "INDEM2" in df_clean.columns:
-            df_clean["INDEM2"] = df_clean["INDEM2"].apply(lambda x: self.extract_prefix_code(x, "CLASS", 5))
+            df_clean["INDEM2"] = df_clean["INDEM2"].apply(lambda x: float(self.extract_prefix_code(x, "CLASS", 5)))
 
         df_clean = df_clean.applymap(self.replace_values)
         if "CARACT4" in df_clean.columns:

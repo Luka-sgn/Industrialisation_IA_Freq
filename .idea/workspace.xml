@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="adding preprocessing code">
+    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="modifying schema">
+      <change afterPath="$PROJECT_DIR$/api/cm_predictor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/preprocessing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +80,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api" />
+      <recent name="$PROJECT_DIR$/api/cm" />
       <recent name="$PROJECT_DIR$/src/Model/params" />
       <recent name="$PROJECT_DIR$/api/utils" />
-      <recent name="$PROJECT_DIR$/api" />
       <recent name="$PROJECT_DIR$/src/data_engineering/Data" />
-      <recent name="$PROJECT_DIR$/src/data_engineering/Classes" />
     </key>
   </component>
   <component name="RunManager" selected="Python.model">
@@ -312,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747734556032</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="modifying schema">
+      <option name="closed" value="true" />
+      <created>1747735582490</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1747735582490</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -335,6 +346,7 @@
     <MESSAGE value="fixing tests &amp; api code" />
     <MESSAGE value="fixing api code" />
     <MESSAGE value="adding preprocessing code" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding preprocessing code" />
+    <MESSAGE value="modifying schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifying schema" />
   </component>
 </project>
