@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="fixing api code">
-      <change afterPath="$PROJECT_DIR$/api/preprocessing.py" afterDir="false" />
+    <list default="true" id="bdbd2c17-c00c-47fc-90f8-6434a136ec44" name="Changes" comment="adding preprocessing code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_engineering/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_engineering/preprocessing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747733414403</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="adding preprocessing code">
+      <option name="closed" value="true" />
+      <created>1747734556032</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1747734556032</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,6 +334,7 @@
     <MESSAGE value="add creatin of Class_test dir for github CI pipeline" />
     <MESSAGE value="fixing tests &amp; api code" />
     <MESSAGE value="fixing api code" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing api code" />
+    <MESSAGE value="adding preprocessing code" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding preprocessing code" />
   </component>
 </project>
