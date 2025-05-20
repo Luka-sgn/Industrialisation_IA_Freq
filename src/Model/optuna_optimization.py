@@ -53,7 +53,6 @@ def optimize_model(X_tr, y_tr, X_val, y_val, scale_pos_weight, encoder=None):
         verbose=False
     )
 
-    # Sauvegarde (model, encoder) comme tuple
-    joblib.dump((final_model, encoder), "params/best_model_encoder_freq_xgb.pkl")
+    joblib.dump((final_model), "params/best_model_freq_xgb.pkl")
 
     return study.best_value, best_params

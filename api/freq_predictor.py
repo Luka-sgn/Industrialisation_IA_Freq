@@ -5,9 +5,8 @@ class FreqPredictor:
         self.model = None
         self.encoder = None
 
-    def predict(self, df, num_cols, cat_cols):
-        df_encoded = self.encoder.transform(df.copy())
-        return self.model.predict(df_encoded)
+    def predict(self, df, *_):
+        return self.model.predict_proba(df)[:, 1]
 
     @staticmethod
     def reduce_memory_usage(df, verbose=True):

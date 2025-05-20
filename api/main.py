@@ -13,16 +13,14 @@ app = FastAPI(
 )
 
 # Chargement du modèle et de l’encodeur
-model_path = "src/Model/params/best_model_encoder_freq_xgb.pkl"
-model_freq, encoder_freq = joblib.load(model_path)
+model_path = "src/Model/params/best_model_freq_xgb.pkl"
+model_freq = joblib.load(model_path)
 
 # Initialisation du prédicteur
 predictor = FreqPredictor()
 predictor.model = model_freq
-predictor.encoder = encoder_freq
 
 # === Routes ===
-
 @app.get("/")
 def root():
     return {"message": "API FREQ en ligne 🚀"}
